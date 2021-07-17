@@ -101,7 +101,10 @@ function Square(props) {
       let status;
       if (winner) {
         status = "Winner: " + winner;
-      } else {
+      }else if (moves.length >9){
+        status = "The match is drawn";
+      } 
+      else {
         status = "Next player: " + (this.state.xIsNext ? "X" : "O");
       }
   
@@ -121,8 +124,6 @@ function Square(props) {
       );
     }
   }
-  
-  // ========================================
   
   ReactDOM.render(<Game />, document.getElementById("root"));
   
